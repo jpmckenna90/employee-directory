@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import "./index.css";
+import Header from "./Components/Header/Header";
+import Search from "./Components/Search/Search";
+import Body from "./Components/Body/Body";
+import userSearch from "./utils/api";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let [employeeList, setEmployeeList] = useState([]);
+
+  useEffect(() => {
+    userSearch()
+      .then((res) => {
+        setEmployeeList(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  if (employeeList.length > 0) {
+    return (
+      <div>
+        <Header />
+        <Search />
+        <Body employees={[employeeList]} />
+      </div>
+    );
+  } else {
+    return <h1>loading...</h1>
+  }
 }
 
 export default App;
