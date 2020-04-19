@@ -3,7 +3,7 @@ import EmployeeInfo from "../EmployeeInfo/EmployeeInfo";
 
 function Body(employeeList) {
   let { employees } = employeeList;
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   let records = [];
 
@@ -21,27 +21,28 @@ function Body(employeeList) {
         />
       </div>
     );
-    // console.log(results.props.children.props)
   });
 
   let [results, setRecords] = useState(records);
-  // console.log(results[0].props.children.props);
-  // console.log(results);
 
   const handleInputChange = (event) => {
     setSearch(event.target.value);
   };
 
   useEffect(() => {
-    // console.log(search);
     if (search) {
-      // console.log(search)
       setRecords(
-        records.filter((input) =>
-          input.toString().toLowerCase().includes(search)
+        records.filter(
+          (record) =>
+            record.props.children.props.firstName
+              .toLowerCase()
+              .includes(search) ||
+            record.props.children.props.lastName.toLowerCase().includes(search) || 
+            record.props.children.props.email.toLowerCase().includes(search) ||
+            record.props.children.props.dob.includes(search) ||
+            record.props.children.props.phone.includes(search)
         )
       );
-      console.log(results);
     } else {
       setRecords(records);
     }
@@ -70,7 +71,6 @@ function Body(employeeList) {
       {results}
     </div>
   );
-  // !todo don't forget to return records
 }
 
 export default Body;
