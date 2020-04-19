@@ -1,16 +1,27 @@
 import React from "react";
+import EmployeeInfo from "../EmployeeInfo/EmployeeInfo";
 
 function Body(employeeList) {
-  console.log('body rendered')
-  console.log(employeeList.employees)
-  // let { employees } = employeeList;
-  // console.log(employees);
+  let { employees } = employeeList;
+  let records = [];
+  console.log(employees);
 
-  // employees.forEach((employee) => {
-  //   console.log('hello');
-  // });
+  employees.map((employee) => {
+    records.push(
+      <div>
+        <EmployeeInfo
+          image={employee.picture.thumbnail}
+          name={employee.name.first + " " + employee.name.last}
+          email={employee.email}
+          dob={employee.dob.date}
+          phone={employee.phone}
+          key={employee.login.uuid}
+        />
+      </div>
+    );
+  });
 
-  return null;
+  return records;
 }
 
 export default Body;

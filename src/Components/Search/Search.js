@@ -1,13 +1,14 @@
-// import React, { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
+// import React from "react";
+// import 
 
 function Search() {
   console.log('search rendered')
 
-  // const [search, setSearch] = useState();
+  const [search, setSearch] = useState();
 
   const handleInputChange = (event) => {
-    // setSearch(event.target.value);
+    setSearch(event.target.value);
   };
 
   return (

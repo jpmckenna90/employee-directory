@@ -24,7 +24,7 @@ function App() {
       <div>
         <Header />
         <Search />
-        <Body employees={[employeeList]} />
+        <Body employees={employeeList} />
       </div>
     );
   } else {
