@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Moment from "react-moment"
 
 function EmployeeInfo(props) {
   // console.log(props);
@@ -12,7 +13,7 @@ function EmployeeInfo(props) {
         <div className="col-2 my-auto">{props.firstName}</div>
         <div className="col-2 my-auto">{props.lastName}</div>
         <div className="col-2 my-auto">{props.email}</div>
-        <div className="col-2 my-auto">{props.dob}</div>
+        <div className="col-2 my-auto"><Moment format="MM-DD-YYYY">{props.dob}</Moment></div>
         <div className="col-2 my-auto">{props.phone}</div>
       </div>
     );
@@ -25,7 +26,7 @@ function EmployeeInfo(props) {
         <div className="col-2 my-auto">{props.firstName}</div>
         <div className="col-2 my-auto">{props.lastName}</div>
         <div className="col-2 my-auto">{props.email}</div>
-        <div className="col-2 my-auto">{props.dob}</div>
+        <div className="col-2 my-auto"><Moment format="MM-DD-YYYY">{props.dob}</Moment></div>
         <div className="col-2 my-auto">{props.phone}</div>
       </div>
     );

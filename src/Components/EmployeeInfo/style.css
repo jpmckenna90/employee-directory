@@ -1,6 +1,7 @@
 #employeeRow{
   border-bottom: 1px solid blue;
   font-family: 'Lora', serif;
+  font-size:1.5rem;
 }
 
 .even{

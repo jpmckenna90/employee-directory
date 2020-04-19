@@ -3,7 +3,7 @@ import axios from "axios";
 async function userSearch() {
   let results = {};
   await axios
-    .get("https://randomuser.me/api/?results=40nat=us")
+    .get("https://randomuser.me/api/?results=40&nat=us")
     .then((res) => {
       results = res;
     })
