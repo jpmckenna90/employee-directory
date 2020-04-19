@@ -1,3 +1,7 @@
 .jumbotron{
   border-bottom: 10px red
 }
+
+input:-webkit-any(){
+  font-family: 'Lora', serif!important;
+}

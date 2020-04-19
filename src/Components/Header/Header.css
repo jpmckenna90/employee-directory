@@ -1,8 +1,14 @@
 .jumbotron {
-  background-color: blue;
-  border-bottom: 10px solid red;
+  background-color: #192231;
+  border-bottom: 10px solid #98878F;
+  border-radius:0%;
+  box-shadow: lightslategray 5px 5px 10px;
+  
 }
 
 h1{
-  color:white;
+  color:#bbc8dc ;
+  font-family: 'Lora', serif;
+  font-size: 4rem!important;
+  font-weight: normal
 }

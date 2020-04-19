@@ -1,0 +1,15 @@
+#tableHeadRow{
+  margin-top:2%;
+}
+
+p{
+  font-family: 'Lora', serif;
+}
+
+input{
+  font-family: 'Lora', serif;
+}
+
+.col-md-2, .col-2{
+  text-align: center;
+}
