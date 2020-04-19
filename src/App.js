@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./index.css";
 import Header from "./Components/Header/Header";
-import Search from "./Components/Search/Search";
+// import Search from "./Components/Search/Search";
 import Body from "./Components/Body/Body";
 import userSearch from "./utils/api";
 
@@ -23,7 +23,7 @@ function App() {
     return (
       <div>
         <Header />
-        <Search />
+        {/* <Search employees={employeeList}/> */}
         <Body employees={employeeList} />
       </div>
     );

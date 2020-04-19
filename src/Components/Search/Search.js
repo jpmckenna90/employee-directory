@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 // import React from "react";
-// import 
+// import
 
 function Search() {
-  console.log('search rendered')
-
   const [search, setSearch] = useState();
 
   const handleInputChange = (event) => {
@@ -12,10 +10,22 @@ function Search() {
   };
 
   return (
-    <div className="row justify-content-center">
-      <input type="text" placeholder="Search for employees..." onChange={handleInputChange}></input>
-      {/* this works */}
-      {/* below here, should filter users by name */}
+    <div>
+      <div className="row justify-content-center" id="searchRow">
+        <input
+          type="text"
+          placeholder="Search for employees..."
+          onChange={handleInputChange}
+        ></input>
+      </div>
+      <div className="row justify-content-center" id="tableHeadRow">
+        <div className="col-md-2">image</div>
+        <div className="col-md-2">first name</div>
+        <div className="col-md-2">last name</div>
+        <div className="col-md-2">email</div>
+        <div className="col-md-2">dob</div>
+        <div className="col-md-2">phone</div>
+      </div>
     </div>
   );
 }

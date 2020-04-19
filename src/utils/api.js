@@ -3,9 +3,8 @@ import axios from "axios";
 async function userSearch() {
   let results = {};
   await axios
-    .get("https://randomuser.me/api/?results=5")
+    .get("https://randomuser.me/api/?results=20")
     .then((res) => {
-      // console.log('res:' + JSON.stringify(res))
       results = res;
     })
     .catch((err) => {

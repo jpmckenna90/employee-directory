@@ -1,0 +1,12 @@
+#employeeRow{
+  border-bottom: 1px solid blue;
+  
+}
+
+.even{
+  background-color: lightblue
+}
+
+.odd{
+  background-color: gray;
+}
