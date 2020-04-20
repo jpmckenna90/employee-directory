@@ -68,10 +68,8 @@ function Body(employeeList) {
   const handleSort = () => {
     if (sorted === "" || sorted === "desc") {
       setSort("asc");
-      console.log(sorted);
     } else if (sorted === "asc") {
       setSort("desc");
-      console.log(sorted);
     }
   };
 
@@ -99,7 +97,6 @@ function Body(employeeList) {
   return (
     <div>
       <div className="row justify-content-center">
-        <p>{search}</p>
       </div>
       <div className="row justify-content-center" id="searchRow">
         <input
