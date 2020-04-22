@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import EmployeeInfo from "../EmployeeInfo/EmployeeInfo";
 import "./style.css";
-// import Moment from "react-moment";
+
 
 function Body(employeeList) {
+
   let { employees } = employeeList;
   const [search, setSearch] = useState("");
 
   const [sorted, setSort] = useState("");
 
   let records = [];
+
+  let [results, setRecords] = useState(records);
 
   employees.map((employee, index) => {
     records.push(
@@ -27,7 +30,7 @@ function Body(employeeList) {
     );
   });
 
-  let [results, setRecords] = useState(records);
+  
 
   const ascending = (a, b) => {
     const nameA = a.props.children.props.lastName.toLowerCase();
@@ -67,9 +70,13 @@ function Body(employeeList) {
 
   const handleSort = () => {
     if (sorted === "" || sorted === "desc") {
+      records.sort(ascending);
       setSort("asc");
+      setRecords(records);
     } else if (sorted === "asc") {
+      records.sort(descending);
       setSort("desc");
+      setRecords(records);
     }
   };
 
